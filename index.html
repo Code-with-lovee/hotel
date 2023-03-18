@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotel Booking Website</title>
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,200&family=Poppins:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Nunito:ital,wght@1,200&family=Poppins:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<style type="text/css">
+	
+	.availability-form{
+		margin-top: -50px;
+		z-index: 2;
+		position: relative;
+	}
+
+	@media screen and (max-width: 575px) {
+	.availability-form{
+		margin-top: 25px;
+		padding: 0 35px;
+	}
+
+	}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg bg-light px-lg-3 py-lg-2 shadow-sm sticky-top">
+		<div class="container-fluid">
+		  <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.html"> HOTEL</a>
+		  <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			  <li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link me-2" href="about.html">About</a>
+			</li>
+			  <li class="nav-item">
+				<a class="nav-link me-2" href="services.html">Services</a>
+			  </li>
+			  <li class="nav-item btt1 ">
+				<a class="nav-link me-2" href="#">Gallery</a>
+				<div class="dropdown-content">
+					<a href="gallery.html" style="
+					text-decoration: none;
+					color: gray;
+				">Photos</a> <br>
+					<a href="yt.html" style="
+					text-decoration: none;
+					color: gray;
+				">You Tube Video</a>
+				</div>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link me-2" href="contact.html">Contact Us</a>
+			  </li>
+			  
+			</ul>
+			<div class="d-flex" role="search">
+			  <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModel">Login	</button>
+			  <button type="button" class="btn btn-outline-dark shadow-none" data-bs-toggle="modal" data-bs-target="#registerModel">Register	</button>
+			</div>
+		  </div>
+		</div>
+	  </nav>
+	  
+	  <div class="modal fade" id="loginModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			  <form>
+				  <div class="modal-header">
+				  <h5 class="modal-title d-flex align-items-center">
+				  <i class="bi bi-person-circle fs-3 me-2">User Login</i>
+				  </h5>
+				  <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+				  <div class="mb-3">
+					  <label class="form-label">Email address</label>
+					  <input type="email" class="form-control shadow-none">
+					  </div>
+					<div class="mb-4">
+					  <label class="form-label">Password</label>
+					  <input type="password" class="form-control shadow-none">
+					</div>
+					<div class="d-flex align-items-center justify-content-between mb-2">
+						<button type="submit" class="btn btn-dark shadow-none">LOGIN</button>
+						<a href="JavaScript: void(0)" class="text-secondary text-decoration-none" >Forgot Password</a>
+					</div>
+					</div>
+					<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				  <button type="button" class="btn btn-primary">Understood</button>
+					</div>
+			  </form>
+			
+		  </div>
+		</div>
+	  </div>
+	  
+	  <div class="modal fade" id="registerModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+		  <div class="modal-content">
+			  
+			  <form>
+				  <div class="modal-header">
+				  <h5 class="modal-title d-flex align-items-center">
+				  <i class="bi bi-person-lines-fill fs-3 me-2">User Registration</i>
+				  </h5>
+				  <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<span class="badge rounded-pill bg-light text-dark mb-3 text-wrap lh-base">Note: Your details must match with your ID (Aadhaar card, passport, driving license, etc.) that will be required during check-in.
+					  </span>
+				  <div class="container-fluid">
+					  <div class="row">
+						  <div class="col-md-6 ps-0 mb-3">
+							  <label class="form-label">Name</label>
+							  <input type="text" class="form-control shadow-none">
+						  </div>
+						  <div class="col-md-6 p-0">
+							  <label class="form-label">Email</label>
+							  <input type="email" class="form-control shadow-none">
+						  </div>
+						  <div class="col-md-6 ps-0 mb-3">
+							  <label class="form-label">Phone Number</label>
+							  <input type="number" class="form-control shadow-none">
+						  </div>
+						  <div class="col-md-6 p-0">
+							  <label class="form-label">Picture</label>
+							  <input type="file" class="form-control shadow-none">
+						  </div>
+						  <div class="col-md-12 p-0">
+							  <label class="form-label">Address</label>
+							  <textarea class="form-control shadow-none" rows="1"></textarea>
+						  </div>
+						  <div class="col-md-6 ps-0 mb-3">
+							  <label class="form-label">Pin Code</label>
+							  <input type="number" class="form-control shadow-none">
+						  </div>
+						  <div class="col-md-6 p-0">
+							  <label class="form-label">Date of Birth</label>
+							  <input type="number" class="form-control shadow-none">
+						  </div>
+						  <div class="col-md-6 ps-0 mb-3">
+							  <label class="form-label">Password</label>
+							  <input type="passport" class="form-control shadow-none">
+						  </div>
+						  <div class="col-md-6 p-0">
+							  <label class="form-label">Confirm Password</label>
+							  <input type="passport" class="form-control shadow-none">
+						  </div>
+						  <div class="text-center my-1">
+							  <button type="submit" class="btn btn-dark shadow-none">Register</button>
+						  </div>
+					  </div>
+				  </div>	
+				  
+			  </form>
+			
+		  </div>
+		</div>
+	  </div>
+		  
+	  </div>
+<!-- Swiper Carousal-->
+ <div class="container-fluid px-lg-4 mt-4">
+ 	 <div class="swiper swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="images/carousel/1.png" class="w-100 d-block" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/carousel/2.png" class="w-100 d-block" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/carousel/3.png" class="w-100 d-block" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/carousel/4.png" class="w-100 d-block" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/carousel/5.png" class="w-100 d-block" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/carousel/6.png" class="w-100 d-block" />
+        </div>
+        
+      </div>
+      
+    </div>
+ </div>
+
+ <!-- check avilability form-->
+ <div class="container availability-form">
+ 	<div class="row">
+ 		<div class="col-lg-12 bg-white shadow p-4 rounded">
+ 			<h5 class="col-lg-3">Check Booking Availability</h5>
+ 			<form>
+ 				<div class="row align-items-end">
+ 					<div class="col-lg-3 mb-3">
+ 						<label class="form-label" style="font-weight: 500;">Check-in</label>
+ 						<input type="date" class="form-control shadow-none">
+ 					</div>
+ 					<div class="col-lg-3 mb-3">
+ 						<label class="form-label" style="font-weight: 500;">Check-in</label>
+ 						<input type="date" class="form-control shadow-none">
+ 					</div>
+ 					<div class="col-lg-3 mb-3">
+ 						<label class="form-label" style="font-weight: 500;">Adult</label>
+ 						<select class="form-select shadow-none">
+  					
+  						<option value="1">One</option>
+  						<option value="2">Two</option>
+  						<option value="3">Three</option>
+						</select>
+ 					</div>
+ 					<div class="col-lg-2 mb-3">
+ 						<label class="form-label" style="font-weight: 500;">Children</label>
+ 						<select class="form-select shadow-none">
+  						
+  						<option value="1">One</option>
+  						<option value="2">Two</option>
+  						<option value="3">Three</option>
+						</select>
+ 					</div>
+ 					<div class="col-lg-1 mb-lg-3 mt-2">
+ 						<button type="submit" class="btn text-white shadow-none custom-bg">Submit</button>
+ 					</div>
+
+ 				</div>
+ 			</form>
+ 		</div>
+ 	</div>
+ </div>
+
+
+ <section class="about container" id="about">
+
+    <h1 class="heading"><span>About</span> us </h1>
+    
+    <div class="row">
+    
+        <div class="image">
+            <img src="images/about/about-img.jpg" alt="">
+        </div>
+    
+        <div class="content">
+            <h3>Experience luxury and comfort like never before.</h3>
+            <p>Welcome to our hotels website! We are a team dedicated to providing you with the best possible travel experience. Our hotels offer comfortable accommodations and top-notch amenities to ensure that your stay is enjoyable and relaxing.</p>
+            <p>Our properties are located in some of the most beautiful destinations around the world. Whether you're traveling for business or pleasure, our hotels are the perfect choice for your next trip. We pride ourselves on offering exceptional service and hospitality to each and every guest.</p>
+        </div>
+    
+    </div>
+    <div class="btnn">
+		<a href="about.html" class="btn btn-sm btn-outline-dark bb rounded rounded-0 fw-bold shadow-none" style="margin: auto;">Read More >>></a>
+	</div>
+    </section>
+
+
+
+
+
+
+
+
+
+ 
+ <!-- Our Rooms -->
+ <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR ROOMS</h2>
+ <div class="container">
+ 	<div class="row">
+
+ 		<div class="col-lg-4 col-md-6 my-3">
+ 			<div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
+			  <img src="images/rooms/1.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">Simple Room Name</h5>
+			    <h6 class="mb-4">Ꝛ2000 per night </h6>
+			    <div class="features mb-4">
+			    	<h6 class="mb-1">Features</h6>
+			    	<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		2 Rooms
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		1 Bathroom
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		1 Balcony
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		3 Sofa
+    				</span>
+			    </div>
+			    <div class="Facilities mb-4">
+			    	<h6 class="mb-1">Facilities</h6>
+			    	<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		Wifi
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		Television
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		AC
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		Room Heater
+    				</span>
+    			</div>
+
+    			<div class="guests mb-4">
+			    	<h6 class="mb-1">Guests</h6>
+			    	<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		5 Adults
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		4 Children
+    				</span>
+    			</div>	
+    				<div class="rating mb-4">
+
+    					<h6 class="mb-1">Rating</h6>
+    					<span class="badge rounded-pill bg-light">
+    						<i class="bi bi-star-fill text-warning"></i>
+    						<i class="bi bi-star-fill text-warning"></i>
+    						<i class="bi bi-star-fill text-warning"></i>
+    						<i class="bi bi-star-fill text-warning"></i>
+    					</span>
+    				</div>
+    				<div class="d-flex justify-content-evenly mb-2">
+    					<a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
+    					<a href="#" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
+    				</div>
+			  </div>
+			</div>
+ 		</div>
+
+ 		<div class="col-lg-4 col-md-6 my-3">
+ 			<div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
+			  <img src="images/rooms/1.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">Simple Room Name</h5>
+			    <h6 class="mb-4">Ꝛ2000 per night </h6>
+			    <div class="features mb-4">
+			    	<h6 class="mb-1">Features</h6>
+			    	<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		2 Rooms
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		1 Bathroom
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		1 Balcony
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		3 Sofa
+    				</span>
+			    </div>
+			    <div class="Facilities mb-4">
+			    	<h6 class="mb-1">Facilities</h6>
+			    	<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		Wifi
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		Television
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		AC
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		Room Heater
+    				</span>
+    				<div class="guests mb-4">
+			    	<h6 class="mb-1">Guests</h6>
+			    	<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		5 Adults
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		4 Children
+    				</span>
+    				
+    				</div>	
+    				<div class="rating mb-4">
+
+    					<h6 class="mb-1">Rating</h6>
+    					<span class="badge rounded-pill bg-light">
+    						<i class="bi bi-star-fill text-warning"></i>
+    						<i class="bi bi-star-fill text-warning"></i>
+    						<i class="bi bi-star-fill text-warning"></i>
+    						<i class="bi bi-star-fill text-warning"></i>
+    					</span>
+    				</div>
+    				<div class="d-flex justify-content-evenly mb-2">
+    					<a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
+    					<a href="#" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
+    				</div>
+			    </div>
+			  </div>
+			</div>
+ 		</div>
+
+ 		<div class="col-lg-4 col-md-6 my-3">
+ 			<div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
+			  <img src="images/rooms/1.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">Simple Room Name</h5>
+			    <h6 class="mb-4">Ꝛ2000 per night </h6>
+			    <div class="features mb-4">
+			    	<h6 class="mb-1">Features</h6>
+			    	<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		2 Rooms
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		1 Bathroom
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		1 Balcony
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		3 Sofa
+    				</span>
+			    </div>
+			    <div class="Facilities mb-4">
+			    	<h6 class="mb-1">Facilities</h6>
+			    	<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		Wifi
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		Television
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		AC
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		Room Heater
+    				</span>
+
+    				<div class="guests mb-4">
+			    	<h6 class="mb-1">Guests</h6>
+			    	<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		5 Adults
+    				</span>
+    				<span class="badge rounded-pill bg-light text-dark text-wrap">
+			    		4 Children
+    				</span>
+    				</div>
+    					
+    				<div class="rating mb-4">
+
+    					<h6 class="mb-1">Rating</h6>
+    					<span class="badge rounded-pill bg-light">
+    						<i class="bi bi-star-fill text-warning"></i>
+    						<i class="bi bi-star-fill text-warning"></i>
+    						<i class="bi bi-star-fill text-warning"></i>
+    						<i class="bi bi-star-fill text-warning"></i>
+    					</span>
+    				</div>
+    				<div class="d-flex justify-content-evenly mb-2">
+    					<a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
+    					<a href="#" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
+    				</div>
+			    </div>
+			  </div>
+			</div>
+ 		</div>
+
+
+ 		<div class="col-lg-12 text-center mt-5">
+ 			<a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Rooms</a>
+ 		</div>
+ 	</div>	
+ </div>
+
+
+
+ <section class="service" id="service" style="max-width: 1140px; margin: auto;">
+
+    <h1 class="heading"> our <span>services</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box bg-white rounded shadow">
+            <i class="fas fa-bed"></i>
+            <h3>Accommodation</h3>
+            <p>Hotels offer rooms or suites for guests to stay in, with varying levels of luxury and amenities.</p>
+        </div>
+
+        <div class="box bg-white rounded shadow">
+            <i class="fas fa-spray-can"></i>
+            <h3>Housekeeping</h3>
+            <p>Housekeeping services include cleaning and tidying guest rooms, changing bed linens, and restocking bathroom amenities.</p>
+        </div>
+
+        <div class="box bg-white rounded shadow">
+            <i class="fas fa-utensils"></i>
+            <h3>Food and Beverage</h3>
+            <p> Many hotels offer restaurants, cafes, and bars for guests to enjoy food and drinks. Some hotels also offer room service for guests who prefer to dine in their rooms.</p>
+        </div>
+
+        <div class="box bg-white rounded shadow">
+            <i class="fas fa-dumbbell"></i>
+            <h3>Fitness and Wellness</h3>
+            <p>Many hotels offer fitness centers, swimming pools, spas, and other wellness facilities for guests to relax and unwind.</p>
+        </div>
+
+        <div class="box bg-white rounded shadow">
+            <i class="fas fa-briefcase"></i>
+            <h3>Business Services</h3>
+            <p> Business travelers can take advantage of meeting rooms, conference rooms, and other business services provided by the hotel.</p>
+        </div>
+
+        <div class="box bg-white rounded shadow">
+            <i class="fas fa-gamepad"></i>
+            <h3>Entertainment</h3>
+            <p>Some hotels provide entertainment facilities such as movie theaters, game rooms, or even casinos.</p>
+        </div>
+
+    </div>
+	<div class="btnn">
+		<a href="#" class="btn btn-sm btn-outline-dark bb rounded rounded-0 fw-bold shadow-none" style="margin: auto;">More Services >>></a>
+	</div>
+
+</section>
+
+
+
+
+
+<section class="gallery container" id="gallery">
+
+    <h1 class="heading">our <span>gallery</span></h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img  src="images/carousel/g-1.jpg" alt="">
+            <h3 class="title">photos </h3>
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="gallery.html" class="fas fa-eye"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/carousel/g-2.jpg" alt="">
+            <h3 class="title">photos </h3>
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="gallery.html" class="fas fa-eye"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/carousel/g-3.jpg" alt="">
+            <h3 class="title">photos </h3>
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="gallery.html" class="fas fa-eye"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/carousel/g-4.jpg" alt="">
+            <h3 class="title">photos </h3>
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="gallery.html" class="fas fa-eye"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/carousel/g-5.jpg" alt="">
+            <h3 class="title"></h3>
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="gallery.html" class="fas fa-eye"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/carousel/g-6.jpg" alt="">
+            <h3 class="title">photos </h3>
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="gallery.html" class="fas fa-eye"></a>
+            </div>
+        </div>
+
+
+    </div>
+	<div class="btnn">
+		<a href="#" class="btn btn-sm btn-outline-dark bb rounded rounded-0 fw-bold shadow-none" style="margin: auto;">View More >>></a>
+	</div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Testimonials -->
+
+ <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">TESTIMONIALS</h2>
+
+ <div class="container mt-5">
+ 	<!-- Swiper -->
+    <div class="swiper swiper-testimonials">
+      <div class="swiper-wrapper mb-5">
+
+        <div class="swiper-slide bg-white p-4">
+          <div class="profile d-flex align-items-center mb-3">
+          	<img src="images/facilities/stars.png" width="30px">
+          	<h6 class="m-0 ms-2">Random user1</h6>
+          </div>
+          <p>
+          	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          	consequat. 
+          </p>
+          <div class="rating">
+          	<i class="bi bi-star-fill text-warning"></i>
+    		<i class="bi bi-star-fill text-warning"></i>
+    		<i class="bi bi-star-fill text-warning"></i>
+    		<i class="bi bi-star-fill text-warning"></i>
+          </div>
+        </div>
+
+        <div class="swiper-slide bg-white p-4">
+          <div class="profile d-flex align-items-center mb-3">
+          	<img src="images/facilities/stars.png" width="30px">
+          	<h6 class="m-0 ms-2">Random user1</h6>
+          </div>
+          <p>
+          	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          	consequat. 
+          </p>
+          <div class="rating">
+          	<i class="bi bi-star-fill text-warning"></i>
+    		<i class="bi bi-star-fill text-warning"></i>
+    		<i class="bi bi-star-fill text-warning"></i>
+    		<i class="bi bi-star-fill text-warning"></i>
+          </div>
+        </div>
+
+        <div class="swiper-slide bg-white p-4">
+          <div class="profile d-flex align-items-center mb-3">
+          	<img src="images/facilities/stars.png" width="30px">
+          	<h6 class="m-0 ms-2">Random user1</h6>
+          </div>
+          <p>
+          	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          	consequat. 
+          </p>
+          <div class="rating">
+          	<i class="bi bi-star-fill text-warning"></i>
+    		<i class="bi bi-star-fill text-warning"></i>
+    		<i class="bi bi-star-fill text-warning"></i>
+    		<i class="bi bi-star-fill text-warning"></i>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+ </div>
+
+ <!-- REach us-->
+
+
+
+
+
+
+
+
+<hr>
+<div class="container-fluid bg-white mt-5">
+	<div class="row">
+		<div class="col-lg-4 p-4">
+			<h3 class="h-font fw-bold fs-3 mb-2">HOTEL</h3>
+			<p>At our hotels, you'll find a range of amenities to make your stay more comfortable. From high-speed internet and business centers to fitness facilities and pools, we have everything you need to make the most of your stay. Our on-site restaurants offer delicious cuisine that will satisfy any palate, and our bars provide the perfect atmosphere for a nightcap.</p>
+		</div>
+		<div class="col-lg-4 p-4">
+			<h5 class="mb-3">Link</h5>
+			<a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">Home</a><br>
+			<a href="about.html" class="d-inline-block mb-2 text-dark text-decoration-none">About</a><br>
+			<a href="Services.html" class="d-inline-block mb-2 text-dark text-decoration-none">Services</a><br>
+			<a href="gallery.html" class="d-inline-block mb-2 text-dark text-decoration-none">Gallery</a><br>
+			<a href="contact.html" class="d-inline-block mb-2 text-dark text-decoration-none">Contact Us</a><br>
+		</div>
+		<div class="col-lg-4 p-4">
+			<h5 class="mb-3">Follow us</h5>
+			<a href="#" class="d-inline-block text-dark text-decoration-none mb-2">
+				<i class="bi bi-twitter me-1"></i>Twitter
+			</a><br>
+			<a href="#" class="d-inline-block text-dark text-decoration-none mb-2">
+				<i class="bi bi-facebook me-1"></i>facebook
+			</a><br> 
+			<a href="#" class="d-inline-block text-dark text-decoration-none">
+				<i class="bi bi-instagram me-1"></i>facebook
+			</a><br>  
+		</div>
+	</div>
+</div>
+
+<h6 class="text-center bg-dark text-white p-3 m-0">Copyright 2023 || All Rights Reserved</h6>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- JavaScript Bundle with Popper -->
+
+
+ <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+ <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        spaceBetween: 30,
+        effect: "fade",
+        loop: true,
+        autoplay: {
+        	delay: 3500,
+        	disableOnInteraction: false,
+        }
+      });
+
+      var swiper = new Swiper(".swiper-testimonials", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        slidesPerView: "3",
+        loop: true,
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        breakpoints: {
+        	320: {
+        		slidesPerView: 1,
+        	},
+        	640: {
+        		slidesPerView: 1,
+        	},
+        	768: {
+        		slidesPerView: 2,
+        	},
+        	1024: {
+        		slidesPerView: 3,
+        	},
+        }
+      });
+    </script>
+</body>
+</html>
